@@ -1,3 +1,6 @@
+# Fork
+This is a fork of the main BeamMP repository. It is nearly identical, but with certain restrictions removed.
+
 # BeamMP
 A Lua mod bringing online multiplayer to [BeamNG.drive](https://beamng.com)!
 
