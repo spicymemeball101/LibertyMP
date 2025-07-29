@@ -213,9 +213,9 @@ end
 --- A BeamNG event that is called when a mod is loaded by the games mod manager
 -- @param mod table The loaded mod information
 local function onModActivated(mod)
-	log('M', 'onModActivated', mod.modname)
 	if MPCoreNetwork.isMPSession() then
-		checkMod(mod)
+		log('I', 'onModActivated', "Beammp mod check skipped. Will continue with activating " .. mod.modname)
+		-- checkMod(mod)
 	end
 end
 
