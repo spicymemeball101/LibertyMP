@@ -1206,13 +1206,11 @@ local core_vehicles_cloneCurrent = core_vehicles.cloneCurrent
 core_vehicles.cloneCurrent = function ()
 	local vehicle = be:getPlayerVehicle(0)
 	if vehicle:getField("protected", 0) == "1" then
-		local title = MPTranslate("ui.multiplayer.configprotection.clone.title", "Vehicle Clone Error")
-		local msg = MPTranslate("ui.multiplayer.configprotection.clone.message", "Sorry, you cannot clone this vehicle.")
+		local title = MPTranslate("ui.multiplayer.configprotection.clone.title", "Vehicle Clone Success")
+		local msg = MPTranslate("ui.multiplayer.configprotection.clone.message", "You cannot clone this vehicle, but we ball.")
 		guihooks.trigger("toastrMsg", {type="error", title=title, msg=msg})
-		return
-	else
-		core_vehicles_cloneCurrent()
 	end
+	core_vehicles_cloneCurrent()
 end
 
 local core_vehicle_partmgmt_saveLocal = extensions.core_vehicle_partmgmt.saveLocal
