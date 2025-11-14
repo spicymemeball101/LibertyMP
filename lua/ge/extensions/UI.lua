@@ -14,7 +14,7 @@ local M = {}
 local chatWindow = require("multiplayer.ui.chat")
 local optionsWindow = require("multiplayer.ui.options")
 local playerListWindow = require("multiplayer.ui.playerList")
-require('/common/extensions/ui/flowgraph/editor_api')(M)
+require('/common/extensions/ui/flowgraph/editor_api_luaintf')(M)
 local gui_module = require("ge/extensions/editor/api/gui")
 local gui = {setupEditorGuiTheme = nop}
 local imgui = ui_imgui
@@ -257,6 +257,8 @@ local function renderWindow()
 
     if collapsed then
         imgui.SetNextWindowSize(imgui.ImVec2(lastSize.x, 30))
+    elseif not firstRender then
+        imgui.SetNextWindowSize(imgui.ImVec2(lastSize.x, lastSize.y))
     end
 
     if imgui.Begin("BeamMP Chat", M.windowOpen, (collapsed and M.windowCollapsedFlags or M.windowFlags)) then
@@ -351,6 +353,7 @@ local function renderWindow()
 
     imgui.PopStyleColor(16)
     imgui.PopStyleVar(3)
+    firstRender = false
 end
 
 

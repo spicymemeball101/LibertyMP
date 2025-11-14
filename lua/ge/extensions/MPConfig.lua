@@ -60,12 +60,15 @@ local function setDefaultUnicycle(configFileName)
 end
 
 local defaultSettings = {
-	autoSyncVehicles = true, nameTagShowDistance = true, enableBlobs = true, showSpectators = true, nametagCharLimit = 32, showPlayerIDs = false,
+	autoSyncVehicles = true, nameTagShowDistance = true, enableBlobs = true, showSpectators = true, licensePlateUsesPlayerName = true, nametagCharLimit = 32, showPlayerIDs = false, nameTagsHideBehindObjects = false,
 	-- queue system
 	enableSpawnQueue = true, enableQueueAuto = true, queueSkipUnicycle = true, queueApplySpeed = 2, queueApplyTimeout = 3, highlightQueuedPlayers = true,
 	-- colors
 	showBlobQueued = true, blobColorQueued = "#FF6400", showBlobIllegal = true, blobColorIllegal = "#000000", showBlobDeleted = true, blobColorDeleted = "#333333",
 
+	-- ui app style selector
+	useUiAppRedesign = 0, -- default: old style
+	
 	-- new chat menu
 	enableNewChatMenu = false,
 
